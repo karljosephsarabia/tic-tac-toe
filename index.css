@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'blood-crow';
+    src: url(./font-style/bloodcrow.ttf);
+}
+
+body {
+    background-image: url(./assets/Background-image-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+}
+
+.image-logo {
+    width: 10rem;
+}
+
+.red-line {
+    position: absolute;
+    top: 45px;
+    width: 650px;
+    height: 150px;
+
+}
+
+.image-subtitle {
+    font-family: 'blood-crow';
+    color: white;
+    position: absolute;
+    bottom: -15px;
+}
+
+.game-icon {
+    width: 4rem;
+    height: auto;
+}
+
+.score-font {
+    font-family: 'blood-crow';
+    color:white;
+}
+
+.in-game-icon {
+    width: 4rem;
+    height: auto;
+    animation: icon-anim 2s ease forwards;
+}
+
+@keyframes icon-anim {
+    0% {transform: scale(2) rotateY(360deg);}
+    50% {transform: scale(2) rotateY(0deg);}
+    75% {transform: scale(2) rotateY(0deg);}
+    100% {transform: scale(1);}
+}
+
+.button-img {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    z-index: -1;
+}
+
+.button-text {
+    font-family: 'blood-crow';
+    color:white;
+}
+
+.game-status {
+    font-family: 'blood-crow';
+    color:white;
+    font-size: 2rem;
+
+}
+
+.game-status-img {
+    position: absolute;
+    top: -100px;
+    height: 250px;
+    width: 800px;
+    z-index: -1;
+}

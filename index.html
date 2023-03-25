@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body class="d-flex flex-column justify-content-evenly" style="min-height: 96vh;">
+    <header class="container-lg">
+        <div class="row d-flex justify-content-center position-relative">
+            <img class="image-logo" src="./assets/demon-slayer-title.png" alt="demon-slayer-logo"/>
+            <img class="red-line" src="./assets/red-line.png" alt="line-design" />
+            <h1 class="image-subtitle d-flex justify-content-center">TIC TAC TOE version</h1>
+            </div>
+        </div>
+    </header>
+    <main class="container-lg">
+        <div class="row m-auto" style="width: 375px;">
+            <div class="col-6 d-flex flex-row align-items-center justify-content-center">
+                <img class="game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>
+                <h1 id="player-score" class="score-font ms-4">0</h1>
+            </div>
+            <div class="col-6 d-flex flex-row align-items-center justify-content-center">
+                <img class="game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>
+                <h1 id="computer-score" class="score-font ms-4">0</h1>
+            </div>
+            <div class="col-6"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="row gap-1 d-flex justify-content-center" style="width: 375px;">
+                    <div class="col-4 d-flex align-items-center justify-content-center board p-0" id="area-1"
+                        style="height: 110px; width: 110px;" onclick="playerMove(1)"><img src="./assets/cut_images_9YmkIVqOxG/image_part_001.png" style="width: 100%; height: 100%; background-color: white;"/></div>
+                    <div class="col-4 d-flex align-items-center justify-content-center board p-0" id="area-2"
+                        style="height: 110px; width: 110px;" onclick="playerMove(2)"><img src="./assets/cut_images_9YmkIVqOxG/image_part_002.png" style="width: 100%; height: 100%; background-color: white;"/></div>
+                    <div class="col-4 d-flex align-items-center justify-content-center board p-0" id="area-3"
+                        style="height: 110px; width: 110px;" onclick="playerMove(3)"><img src="./assets/cut_images_9YmkIVqOxG/image_part_003.png" style="width: 100%; height: 100%; background-color: white;"/></div>
+                    <div class="col-4 d-flex align-items-center justify-content-center board p-0" id="area-4"
+                        style="height: 110px; width: 110px;" onclick="playerMove(4)"><img src="./assets/cut_images_9YmkIVqOxG/image_part_004.png" style="width: 100%; height: 100%; background-color: white;"/></div>
+                    <div class="col-4 d-flex align-items-center justify-content-center board p-0" id="area-5"
+                        style="height: 110px; width: 110px;" onclick="playerMove(5)"><img src="./assets/cut_images_9YmkIVqOxG/image_part_005.png" style="width: 100%; height: 100%; background-color: white;"/></div>
+                    <div class="col-4 d-flex align-items-center justify-content-center board p-0" id="area-6"
+                        style="height: 110px; width: 110px;" onclick="playerMove(6)"><img src="./assets/cut_images_9YmkIVqOxG/image_part_006.png" style="width: 100%; height: 100%; background-color: white;"/></div>
+                    <div class="col-4 d-flex align-items-center justify-content-center board p-0" id="area-7"
+                        style="height: 110px; width: 110px;" onclick="playerMove(7)"><img src="./assets/cut_images_9YmkIVqOxG/image_part_007.png" style="width: 100%; height: 100%; background-color: white;"/></div>
+                    <div class="col-4 d-flex align-items-center justify-content-center board p-0" id="area-8"
+                        style="height: 110px; width: 110px;" onclick="playerMove(8)"><img src="./assets/cut_images_9YmkIVqOxG/image_part_008.png" style="width: 100%; height: 100%; background-color: white;"/></div>
+                    <div class="col-4 d-flex align-items-center justify-content-center board p-0" id="area-9"
+                        style="height: 110px; width: 110px;" onclick="playerMove(9)"><img src="./assets/cut_images_9YmkIVqOxG/image_part_009.png" style="width: 100%; height: 100%; background-color: white;"/></div>
+                </div>
+            </div> 
+            <div class="col-12 position-relative d-flex justify-content-center mt-3">
+                <img class="game-status-img" src="./assets/black-line.png" alt="black-line" />
+                <h1 class="game-status" id="game-status">Press any X to start the game</h1>
+            </div>
+        </div>
+    </main>
+    <footer class="container-lg">
+        <div class="col-12">
+            <div class="row m-auto" style="width: 375px;">
+                <div id="play-button" class="col-6 position-relative d-flex justify-content-center align-items-center" onclick="playGame()">
+                    <img class="button-img" src="./assets/black-line.png" alt="black-line" />
+                    <h1 class="button-text">Play</h1>
+                </div>
+                <div id="quit-button" class="col-6 position-relative d-flex justify-content-center align-items-center" onclick="quitGame()">
+                    <img class="button-img" src="./assets/red-line.png" alt="black-line" />
+                    <h1 class="button-text">Quit</h1>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
