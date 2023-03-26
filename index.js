@@ -26,15 +26,17 @@ function playerMove(event) {
     checkWinner();
 
 
-    if (winner === false && countMove < 9) {
+    if (winner && countMove < 9) {
+        disabledUnsedField();
         setTimeout(() => {
+            enabledUnsedField();
             computerMove();
             removePickedNumber();
             checkWinner();
         }, 3000);
 
 
-    } else if (countMove === 9 && winner === false) {
+    } else if (winner && countMove === 9) {
         console.log("It's a draw");
         gameStatus.textContent = "It's a draw";
     }
@@ -267,30 +269,22 @@ function checkWinner() {
             }
         }
 
-
-    } else if (
-        boardStatus[2] === boardStatus[4] &&
-        boardStatus[4] === boardStatus[6] &&
-        boardStatus[2] === boardStatus[6]) {
-        console.log(`Winner ${boardStatus[2] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'Player' : 'Computer'}`);
-        boardStatus[2] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
-        console.log(playerScore, computerScore);
-        playScore.textContent = playerScore;
-        compScore.textContent = computerScore;
-        winner = true;
-
-        gameStatus.textContent = boardStatus[2] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
-        gameStatus.style.color = boardStatus[2] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
-
-        for (let x of playingBoardStatus) {
-            if (x.textContent === '') {
-                x.style.pointerEvents = 'none';
-            }
+function disabledUnsedField() {
+    for (let y of playingBoardStatus) {
+        if (y.innerHTML != '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>'
+            && '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>') {
+            y.style.pointerEvents = 'none';
         }
-    } else {
-        gameStatus.textContent = player ? 'Muzan turn' : "It's Your Turn";
-        console.log('No Win');
-    } 
+    }
+}
+
+function enabledUnsedField() {
+    for (let y of playingBoardStatus) {
+        if (y.innerHTML != '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>'
+            && '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>') {
+            y.style.pointerEvents = 'auto';
+        }
+    }
 }
 
 function playGame() {
