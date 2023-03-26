@@ -12,9 +12,10 @@ const compScore = document.getElementById('computer-score');
 const gameStatus = document.getElementById('game-status');
 const playButton = document.getElementById('play-button');
 const quitButton = document.getElementById('quit-button');
+const playingBoardStatus = document.getElementsByClassName('board');
 
 let arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    player, pickedNumber, winner = false,
+    player = true, pickedNumber = 0, winner = true,
     playerScore = 0, computerScore = 0, countMove = 0;
 
 function playerMove(event) {
@@ -46,48 +47,48 @@ function playerMove(event) {
 
 function playerSelection(event) {
     if (event === 1) {
-        area1.innerHTML = player === true ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
+        area1.innerHTML = player ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
         area1.style.pointerEvents = 'none';
         pickedNumber = event;
 
         console.log(area1);
     } else if (event === 2) {
-        area2.innerHTML = player === true ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
+        area2.innerHTML = player ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
         area2.style.pointerEvents = 'none';
         pickedNumber = event;
 
     } else if (event === 3) {
-        area3.innerHTML = player === true ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
+        area3.innerHTML = player ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
         area3.style.pointerEvents = 'none';
         pickedNumber = event;
 
     } else if (event === 4) {
-        area4.innerHTML = player === true ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
+        area4.innerHTML = player ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
         area4.style.pointerEvents = 'none';
         pickedNumber = event;
 
     } else if (event === 5) {
-        area5.innerHTML = player === true ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
+        area5.innerHTML = player ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
         area5.style.pointerEvents = 'none';
         pickedNumber = event;
 
     } else if (event === 6) {
-        area6.innerHTML = player === true ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
+        area6.innerHTML = player ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
         area6.style.pointerEvents = 'none';
         pickedNumber = event;
 
     } else if (event === 7) {
-        area7.innerHTML = player === true ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
+        area7.innerHTML = player ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
         area7.style.pointerEvents = 'none';
         pickedNumber = event;
 
     } else if (event === 8) {
-        area8.innerHTML = player === true ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
+        area8.innerHTML = player ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
         area8.style.pointerEvents = 'none';
         pickedNumber = event;
 
     } else if (event === 9) {
-        area9.innerHTML = player === true ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
+        area9.innerHTML = player ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
         area9.style.pointerEvents = 'none';
         pickedNumber = event;
     }
@@ -115,159 +116,122 @@ function checkWinner() {
     let boardStatus = [], countBlank = 0;
     const playingBoardStatus = document.getElementsByClassName('board');
 
-    for (let x of playingBoardStatus) {
-        if (x.innerHTML === '') {
-            countBlank++;
-            boardStatus.push(countBlank);
-        } else {
-            boardStatus.push(x.innerHTML);
-        }
+    if (playingBoardStatus[0].innerHTML === playingBoardStatus[1].innerHTML &&
+        playingBoardStatus[1].innerHTML === playingBoardStatus[2].innerHTML &&
+        playingBoardStatus[0].innerHTML === playingBoardStatus[2].innerHTML) {
+        
+        playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
+        playScore.textContent = playerScore;
+        compScore.textContent = computerScore;
+        gameStatus.textContent = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
+        gameStatus.style.color = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
+
+        disabledUnsedField();
+        winner = !winner;
+
+    } else if (
+        playingBoardStatus[3].innerHTML === playingBoardStatus[4].innerHTML &&
+        playingBoardStatus[4].innerHTML === playingBoardStatus[5].innerHTML &&
+        playingBoardStatus[3].innerHTML === playingBoardStatus[5].innerHTML) {
+        
+        playingBoardStatus[3].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
+        playScore.textContent = playerScore;
+        compScore.textContent = computerScore;
+        gameStatus.textContent = playingBoardStatus[3].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
+        gameStatus.style.color = playingBoardStatus[3].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
+
+        disabledUnsedField();
+        winner = !winner;
+
+
+    } else if (
+        playingBoardStatus[6].innerHTML === playingBoardStatus[7].innerHTML &&
+        playingBoardStatus[7].innerHTML === playingBoardStatus[8].innerHTML &&
+        playingBoardStatus[6].innerHTML === playingBoardStatus[8].innerHTML) {
+        
+        playingBoardStatus[6].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
+        playScore.textContent = playerScore;
+        compScore.textContent = computerScore;
+        gameStatus.textContent = playingBoardStatus[6].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
+        gameStatus.style.color = playingBoardStatus[6].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
+
+        disabledUnsedField();
+        winner = !winner;
+
+    } else if (
+        playingBoardStatus[0].innerHTML === playingBoardStatus[3].innerHTML &&
+        playingBoardStatus[3].innerHTML === playingBoardStatus[6].innerHTML &&
+        playingBoardStatus[0].innerHTML === playingBoardStatus[6].innerHTML) {
+        
+        playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
+        playScore.textContent = playerScore;
+        compScore.textContent = computerScore;
+        gameStatus.textContent = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
+        gameStatus.style.color = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
+
+        disabledUnsedField();
+        winner = !winner;
+
+    } else if (
+        playingBoardStatus[1].innerHTML === playingBoardStatus[4].innerHTML &&
+        playingBoardStatus[4].innerHTML === playingBoardStatus[7].innerHTML &&
+        playingBoardStatus[1].innerHTML === playingBoardStatus[7].innerHTML) {
+       
+        playingBoardStatus[1].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;   
+        playScore.textContent = playerScore;
+        compScore.textContent = computerScore;
+        gameStatus.textContent = playingBoardStatus[1].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
+        gameStatus.style.color = playingBoardStatus[1].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
+
+        disabledUnsedField();
+        winner = !winner;
+
+    } else if (
+        playingBoardStatus[2].innerHTML === playingBoardStatus[5].innerHTML &&
+        playingBoardStatus[5].innerHTML === playingBoardStatus[8].innerHTML &&
+        playingBoardStatus[2].innerHTML === playingBoardStatus[8].innerHTML) {
+        
+        playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
+        playScore.textContent = playerScore;
+        compScore.textContent = computerScore;
+        gameStatus.textContent = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
+        gameStatus.style.color = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
+
+        disabledUnsedField();
+        winner = !winner;
+
+    } else if (
+        playingBoardStatus[0].innerHTML === playingBoardStatus[4].innerHTML &&
+        playingBoardStatus[4].innerHTML === playingBoardStatus[8].innerHTML &&
+        playingBoardStatus[0].innerHTML === playingBoardStatus[8].innerHTML) {
+        
+        playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
+        playScore.textContent = playerScore;
+        compScore.textContent = computerScore;
+        gameStatus.textContent = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
+        gameStatus.style.color = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
+
+        disabledUnsedField();
+        winner = !winner;
+
+    } else if (
+        playingBoardStatus[2].innerHTML === playingBoardStatus[4].innerHTML &&
+        playingBoardStatus[4].innerHTML === playingBoardStatus[6].innerHTML &&
+        playingBoardStatus[2].innerHTML === playingBoardStatus[6].innerHTML) {
+
+        playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
+        playScore.textContent = playerScore;
+        compScore.textContent = computerScore;
+        gameStatus.textContent = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
+        gameStatus.style.color = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
+
+        disabledUnsedField();
+        winner = !winner;
+
+    } else {
+        gameStatus.textContent = player ? 'Muzan turn' : "It's Your Turn";
     }
-
-    console.log(boardStatus);
-
-    if (boardStatus[0] === boardStatus[1] &&
-        boardStatus[1] === boardStatus[2] &&
-        boardStatus[0] === boardStatus[2]) {
-        console.log(`Winner ${boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'Player' : 'Computer'}`);
-        boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
-        console.log(playerScore, computerScore);
-        playScore.textContent = playerScore;
-        compScore.textContent = computerScore;
-
-        gameStatus.textContent = boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
-        gameStatus.style.color = boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
-
-        for (let x of playingBoardStatus) {
-            if (x.textContent === '') {
-                x.style.pointerEvents = 'none';
-            }
-        }
-
-        winner = true;
-
-    } else if (
-        boardStatus[3] === boardStatus[4] &&
-        boardStatus[4] === boardStatus[5] &&
-        boardStatus[3] === boardStatus[5]) {
-        console.log(`Winner ${boardStatus[3] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'Player' : 'Computer'}`);
-        boardStatus[3] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
-        console.log(playerScore, computerScore);
-        winner = true;
-        playScore.textContent = playerScore;
-        compScore.textContent = computerScore;
-
-        gameStatus.textContent = boardStatus[3] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
-        gameStatus.style.color = boardStatus[3] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
-
-        for (let x of playingBoardStatus) {
-            if (x.textContent === '') {
-                x.style.pointerEvents = 'none';
-            }
-        }
-
-
-    } else if (
-        boardStatus[6] === boardStatus[7] &&
-        boardStatus[7] === boardStatus[8] &&
-        boardStatus[6] === boardStatus[8]) {
-        console.log(`Winner ${boardStatus[6] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'Player' : 'Computer'}`);
-        boardStatus[6] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
-        console.log(playerScore, computerScore);
-        playScore.textContent = playerScore;
-        compScore.textContent = computerScore;
-        winner = true;
-
-        gameStatus.textContent = boardStatus[6] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
-        gameStatus.style.color = boardStatus[6] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
-
-        for (let x of playingBoardStatus) {
-            if (x.textContent === '') {
-                x.style.pointerEvents = 'none';
-            }
-        }
-
-    } else if (
-        boardStatus[0] === boardStatus[3] &&
-        boardStatus[3] === boardStatus[6] &&
-        boardStatus[0] === boardStatus[6]) {
-        console.log(`Winner ${boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'Player' : 'Computer'}`);
-        boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
-        console.log(playerScore, computerScore);
-        playScore.textContent = playerScore;
-        compScore.textContent = computerScore;
-        winner = true;
-
-        gameStatus.textContent = boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
-        gameStatus.style.color = boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
-
-        for (let x of playingBoardStatus) {
-            if (x.textContent === '') {
-                x.style.pointerEvents = 'none';
-            }
-        }
-
-    } else if (
-        boardStatus[1] === boardStatus[4] &&
-        boardStatus[4] === boardStatus[7] &&
-        boardStatus[1] === boardStatus[7]) {
-        console.log(`Winner ${boardStatus[1] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'Player' : 'Computer'}`);
-        boardStatus[1] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
-        console.log(playerScore, computerScore);
-        playScore.textContent = playerScore;
-        compScore.textContent = computerScore;
-        winner = true;
-
-        gameStatus.textContent = boardStatus[1] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
-        gameStatus.style.color = boardStatus[1] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
-
-        for (let x of playingBoardStatus) {
-            if (x.textContent === '') {
-                x.style.pointerEvents = 'none';
-            }
-        }
-
-
-    } else if (
-        boardStatus[2] === boardStatus[5] &&
-        boardStatus[5] === boardStatus[8] &&
-        boardStatus[2] === boardStatus[8]) {
-        console.log(`Winner ${boardStatus[2] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'Player' : 'Computer'}`);
-        boardStatus[2] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
-        console.log(playerScore, computerScore);
-        playScore.textContent = playerScore;
-        compScore.textContent = computerScore;
-        winner = true;
-
-        gameStatus.textContent = boardStatus[2] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
-        gameStatus.style.color = boardStatus[2] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
-
-        for (let x of playingBoardStatus) {
-            if (x.textContent === '') {
-                x.style.pointerEvents = 'none';
-            }
-        }
-
-
-    } else if (
-        boardStatus[0] === boardStatus[4] &&
-        boardStatus[4] === boardStatus[8] &&
-        boardStatus[0] === boardStatus[8]) {
-        console.log(`Winner ${boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'Player' : 'Computer'}`);
-        boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
-        console.log(playerScore, computerScore);
-        playScore.textContent = playerScore;
-        compScore.textContent = computerScore;
-        winner = true;
-
-        gameStatus.textContent = boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
-        gameStatus.style.color = boardStatus[0] === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
-
-        for (let x of playingBoardStatus) {
-            if (x.textContent === '') {
-                x.style.pointerEvents = 'none';
-            }
-        }
+}
 
 function disabledUnsedField() {
     for (let y of playingBoardStatus) {
@@ -289,7 +253,7 @@ function enabledUnsedField() {
 
 function playGame() {
     arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9],
-        player = true, pickedNumber, winner = false,
+        player = true, pickedNumber = 0, winner = true,
         countMove = 0;
 
     area1.innerHTML = '<img src="./assets/cut_images_9YmkIVqOxG/image_part_001.png" style="width: 100%; height: 100%; background-color: white;"/>';
@@ -318,7 +282,7 @@ function playGame() {
 
 function quitGame() {
     arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9],
-        player, pickedNumber, winner = false,
+        player = true, pickedNumber = 0, winner = true,
         countMove = 0, playerScore = 0, computerScore = 0;
 
     area1.innerHTML = '<img src="./assets/cut_images_9YmkIVqOxG/image_part_001.png" style="width: 100%; height: 100%; background-color: white;"/>';
@@ -333,7 +297,7 @@ function quitGame() {
     playScore.textContent = '0';
     compScore.textContent = '0';
 
-    gameStatus.textContent = "Press any X to start the game";
+    gameStatus.textContent = "Press any Box to start the game";
     gameStatus.style.color = "white";
 
 
