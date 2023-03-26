@@ -20,7 +20,6 @@ let arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9],
 
 function playerMove(event) {
     player = true;
-    console.log(player);
 
     playerSelection(event);
     removePickedNumber();
@@ -42,7 +41,6 @@ function playerMove(event) {
         gameStatus.textContent = "It's a draw";
     }
 
-    console.log(countMove);
 }
 
 function playerSelection(event) {
@@ -51,7 +49,6 @@ function playerSelection(event) {
         area1.style.pointerEvents = 'none';
         pickedNumber = event;
 
-        console.log(area1);
     } else if (event === 2) {
         area2.innerHTML = player ? '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>' : '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>';
         area2.style.pointerEvents = 'none';
@@ -94,7 +91,6 @@ function playerSelection(event) {
     }
 
     countMove++;
-    console.log(pickedNumber);
 }
 
 function removePickedNumber() {
@@ -106,15 +102,12 @@ function removePickedNumber() {
 function computerMove() {
     let randomNum = arrayNum[Math.floor(Math.random() * arrayNum.length)];
     player = false;
-    console.log(player);
     playerSelection(randomNum);
 }
 
 
 
 function checkWinner() {
-    let boardStatus = [], countBlank = 0;
-    const playingBoardStatus = document.getElementsByClassName('board');
 
     if (playingBoardStatus[0].innerHTML === playingBoardStatus[1].innerHTML &&
         playingBoardStatus[1].innerHTML === playingBoardStatus[2].innerHTML &&
