@@ -35,7 +35,6 @@ function playerMove(event) {
             checkWinner();
         }, 3000);
 
-
     } else if (winner && countMove === 9) {
         console.log("It's a draw");
         gameStatus.textContent = "It's a draw";
@@ -228,8 +227,8 @@ function checkWinner() {
 
 function disabledUnsedField() {
     for (let y of playingBoardStatus) {
-        if (y.innerHTML != '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>'
-            && '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>') {
+        if (y.innerHTML != '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">'
+            && y.innerHTML != '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon">') {
             y.style.pointerEvents = 'none';
         }
     }
@@ -237,9 +236,11 @@ function disabledUnsedField() {
 
 function enabledUnsedField() {
     for (let y of playingBoardStatus) {
-        if (y.innerHTML != '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon"/>'
-            && '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon"/>') {
+        if (y.innerHTML != '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">'
+            && y.innerHTML != '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon">') {
             y.style.pointerEvents = 'auto';
+        } else {
+            y.style.pointerEvents = 'none'
         }
     }
 }
