@@ -13,10 +13,24 @@ const gameStatus = document.getElementById('game-status');
 const playButton = document.getElementById('play-button');
 const quitButton = document.getElementById('quit-button');
 const playingBoardStatus = document.getElementsByClassName('board');
+const playScoreStorage = localStorage.getItem('playerscore');
+const compScoreStorage = localStorage.getItem('computerscore');
 
 let arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9],
     player = true, pickedNumber = 0, winner = true,
     playerScore = 0, computerScore = 0, countMove = 0;
+
+if (playScoreStorage != null && compScoreStorage != null) {
+    playScore.textContent = playScoreStorage;
+    compScore.textContent = compScoreStorage;
+    playerScore = playScoreStorage;
+    computerScore = compScoreStorage;
+} else {
+    playScore.textContent = 0;
+    compScore.textContent = 0;
+}
+
+
 
 function playerMove(event) {
     player = true;
@@ -111,13 +125,15 @@ function checkWinner() {
     if (playingBoardStatus[0].innerHTML === playingBoardStatus[1].innerHTML &&
         playingBoardStatus[1].innerHTML === playingBoardStatus[2].innerHTML &&
         playingBoardStatus[0].innerHTML === playingBoardStatus[2].innerHTML) {
-        
+
         playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
         playScore.textContent = playerScore;
         compScore.textContent = computerScore;
         gameStatus.textContent = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
+        localStorage.setItem('playerscore', playerScore);
+        localStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -125,13 +141,15 @@ function checkWinner() {
         playingBoardStatus[3].innerHTML === playingBoardStatus[4].innerHTML &&
         playingBoardStatus[4].innerHTML === playingBoardStatus[5].innerHTML &&
         playingBoardStatus[3].innerHTML === playingBoardStatus[5].innerHTML) {
-        
+
         playingBoardStatus[3].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
         playScore.textContent = playerScore;
         compScore.textContent = computerScore;
         gameStatus.textContent = playingBoardStatus[3].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[3].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
+        localStorage.setItem('playerscore', playerScore);
+        localStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -140,13 +158,15 @@ function checkWinner() {
         playingBoardStatus[6].innerHTML === playingBoardStatus[7].innerHTML &&
         playingBoardStatus[7].innerHTML === playingBoardStatus[8].innerHTML &&
         playingBoardStatus[6].innerHTML === playingBoardStatus[8].innerHTML) {
-        
+
         playingBoardStatus[6].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
         playScore.textContent = playerScore;
         compScore.textContent = computerScore;
         gameStatus.textContent = playingBoardStatus[6].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[6].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
+        localStorage.setItem('playerscore', playerScore);
+        localStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -154,13 +174,15 @@ function checkWinner() {
         playingBoardStatus[0].innerHTML === playingBoardStatus[3].innerHTML &&
         playingBoardStatus[3].innerHTML === playingBoardStatus[6].innerHTML &&
         playingBoardStatus[0].innerHTML === playingBoardStatus[6].innerHTML) {
-        
+
         playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
         playScore.textContent = playerScore;
         compScore.textContent = computerScore;
         gameStatus.textContent = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
+        localStorage.setItem('playerscore', playerScore);
+        localStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -168,13 +190,15 @@ function checkWinner() {
         playingBoardStatus[1].innerHTML === playingBoardStatus[4].innerHTML &&
         playingBoardStatus[4].innerHTML === playingBoardStatus[7].innerHTML &&
         playingBoardStatus[1].innerHTML === playingBoardStatus[7].innerHTML) {
-       
-        playingBoardStatus[1].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;   
+
+        playingBoardStatus[1].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
         playScore.textContent = playerScore;
         compScore.textContent = computerScore;
         gameStatus.textContent = playingBoardStatus[1].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[1].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
+        localStorage.setItem('playerscore', playerScore);
+        localStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -182,13 +206,15 @@ function checkWinner() {
         playingBoardStatus[2].innerHTML === playingBoardStatus[5].innerHTML &&
         playingBoardStatus[5].innerHTML === playingBoardStatus[8].innerHTML &&
         playingBoardStatus[2].innerHTML === playingBoardStatus[8].innerHTML) {
-        
+
         playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
         playScore.textContent = playerScore;
         compScore.textContent = computerScore;
         gameStatus.textContent = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
+        localStorage.setItem('playerscore', playerScore);
+        localStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -196,13 +222,15 @@ function checkWinner() {
         playingBoardStatus[0].innerHTML === playingBoardStatus[4].innerHTML &&
         playingBoardStatus[4].innerHTML === playingBoardStatus[8].innerHTML &&
         playingBoardStatus[0].innerHTML === playingBoardStatus[8].innerHTML) {
-        
+
         playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? playerScore++ : computerScore++;
         playScore.textContent = playerScore;
         compScore.textContent = computerScore;
         gameStatus.textContent = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
+        localStorage.setItem('playerscore', playerScore);
+        localStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -217,6 +245,8 @@ function checkWinner() {
         gameStatus.textContent = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
+        localStorage.setItem('playerscore', playerScore);
+        localStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -240,7 +270,7 @@ function enabledUnsedField() {
             && y.innerHTML != '<img class="in-game-icon" src="./assets/muzan-icon-removebg-preview.png" alt="muzan-icon">') {
             y.style.pointerEvents = 'auto';
         } else {
-            y.style.pointerEvents = 'none'
+            y.style.pointerEvents = 'none';
         }
     }
 }
@@ -293,6 +323,9 @@ function quitGame() {
 
     gameStatus.textContent = "Press any Box to start the game";
     gameStatus.style.color = "white";
+
+    localStorage.removeItem('playerscore');
+    localStorage.removeItem('computerscore');
 
 
     area1.style.pointerEvents = 'auto';
