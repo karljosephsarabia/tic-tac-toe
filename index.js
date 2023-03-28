@@ -13,8 +13,8 @@ const gameStatus = document.getElementById('game-status');
 const playButton = document.getElementById('play-button');
 const quitButton = document.getElementById('quit-button');
 const playingBoardStatus = document.getElementsByClassName('board');
-const playScoreStorage = localStorage.getItem('playerscore');
-const compScoreStorage = localStorage.getItem('computerscore');
+const playScoreStorage = sessionStorage.getItem('playerscore');
+const compScoreStorage = sessionStorage.getItem('computerscore');
 
 let arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9],
     player = true, pickedNumber = 0, winner = true,
@@ -132,8 +132,8 @@ function checkWinner() {
         gameStatus.textContent = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
-        localStorage.setItem('playerscore', playerScore);
-        localStorage.setItem('computerscore', computerScore);
+        sessionStorage.setItem('playerscore', playerScore);
+        sessionStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -148,8 +148,8 @@ function checkWinner() {
         gameStatus.textContent = playingBoardStatus[3].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[3].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
-        localStorage.setItem('playerscore', playerScore);
-        localStorage.setItem('computerscore', computerScore);
+        sessionStorage.setItem('playerscore', playerScore);
+        sessionStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -165,8 +165,8 @@ function checkWinner() {
         gameStatus.textContent = playingBoardStatus[6].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[6].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
-        localStorage.setItem('playerscore', playerScore);
-        localStorage.setItem('computerscore', computerScore);
+        sessionStorage.setItem('playerscore', playerScore);
+        sessionStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -181,8 +181,8 @@ function checkWinner() {
         gameStatus.textContent = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
-        localStorage.setItem('playerscore', playerScore);
-        localStorage.setItem('computerscore', computerScore);
+        sessionStorage.setItem('playerscore', playerScore);
+        sessionStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -197,8 +197,8 @@ function checkWinner() {
         gameStatus.textContent = playingBoardStatus[1].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[1].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
-        localStorage.setItem('playerscore', playerScore);
-        localStorage.setItem('computerscore', computerScore);
+        sessionStorage.setItem('playerscore', playerScore);
+        sessionStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -213,8 +213,8 @@ function checkWinner() {
         gameStatus.textContent = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
-        localStorage.setItem('playerscore', playerScore);
-        localStorage.setItem('computerscore', computerScore);
+        sessionStorage.setItem('playerscore', playerScore);
+        sessionStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -229,8 +229,8 @@ function checkWinner() {
         gameStatus.textContent = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[0].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
-        localStorage.setItem('playerscore', playerScore);
-        localStorage.setItem('computerscore', computerScore);
+        sessionStorage.setItem('playerscore', playerScore);
+        sessionStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -245,8 +245,8 @@ function checkWinner() {
         gameStatus.textContent = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'You Win' : 'You Lose';
         gameStatus.style.color = playingBoardStatus[2].innerHTML === '<img class="in-game-icon" src="./assets/tanjiro-icon-removebg-preview.png" alt="tanjiro-icon">' ? 'white' : 'red';
 
-        localStorage.setItem('playerscore', playerScore);
-        localStorage.setItem('computerscore', computerScore);
+        sessionStorage.setItem('playerscore', playerScore);
+        sessionStorage.setItem('computerscore', computerScore);
         disabledUnsedField();
         winner = !winner;
 
@@ -324,8 +324,8 @@ function quitGame() {
     gameStatus.textContent = "Press any Box to start the game";
     gameStatus.style.color = "white";
 
-    localStorage.removeItem('playerscore');
-    localStorage.removeItem('computerscore');
+    sessionStorage.removeItem('playerscore');
+    sessionStorage.removeItem('computerscore');
 
 
     area1.style.pointerEvents = 'auto';
